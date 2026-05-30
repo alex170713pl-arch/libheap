@@ -16,6 +16,9 @@ libheap.so: freelist.o libheap.o pool.o
 install: libheap.so
 	cp $< $(PREFIX)lib
 	cp include/heap.h $(PREFIX)include
+	sudo cp libheap.so /usr/local/lib
+	sudo ldconfig
+
 clean:
 	rm -rf libheap.so
 	rm -rf *.o
